@@ -1,180 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
+
+    <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <link rel="stylesheet" href="web.css">
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-        }
-
-        .calculator {
-            background: #2c3e50;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            padding: 25px;
-            width: 350px;
-        }
-
-        .display {
-            background: #34495e;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: right;
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .display input {
-            width: 100%;
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 2.5rem;
-            text-align: right;
-            outline: none;
-            pointer-events: none;
-        }
-
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        button {
-            border: none;
-            outline: none;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        button:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .number, .decimal {
-            background: #ecf0f1;
-            color: #2c3e50;
-        }
-
-        .number:hover, .decimal:hover {
-            background: #d5dbdb;
-        }
-
-        .operator {
-            background: #e67e22;
-            color: white;
-        }
-
-        .operator:hover {
-            background: #d35400;
-        }
-
-        .equals {
-            background: #27ae60;
-            color: white;
-        }
-
-        .equals:hover {
-            background: #229954;
-        }
-
-        .clear {
-            background: #e74c3c;
-            color: white;
-        }
-
-        .clear:hover {
-            background: #c0392b;
-        }
-
-        .span-two {
-            grid-column: span 2;
-        }
-    </style>
 </head>
 <body>
-    <div class="calculator">
-        <div class="display">
-            <input type="text" id="display" value="0" readonly>
+    <img src=
+"E:\1st year\TMSL\IMG_20240922_193035.jpg" 
+         alt="My Image" 
+         style="width: 400px" />
+    <h1>TMSL SURVEY FORM</h1>
+    <!-- Create Form -->
+    <form id="form">
+        <!-- Details -->
+        <div class="form-control">
+            <label for="name" id="label-name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" />
         </div>
-        <div class="buttons">
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button class="operator" onclick="appendToDisplay('/')">/</button>
-            <button class="operator" onclick="appendToDisplay('*')">*</button>
-            <button class="operator" onclick="appendToDisplay('-')">-</button>
-            
-            <button class="number" onclick="appendToDisplay('7')">7</button>
-            <button class="number" onclick="appendToDisplay('8')">8</button>
-            <button class="number" onclick="appendToDisplay('9')">9</button>
-            <button class="operator" onclick="appendToDisplay('+')">+</button>
-            
-            <button class="number" onclick="appendToDisplay('4')">4</button>
-            <button class="number" onclick="appendToDisplay('5')">5</button>
-            <button class="number" onclick="appendToDisplay('6')">6</button>
-            <button class="operator" onclick="calculateResult()">=</button>
-            
-            <button class="number" onclick="appendToDisplay('1')">1</button>
-            <button class="number" onclick="appendToDisplay('2')">2</button>
-            <button class="number" onclick="appendToDisplay('3')">3</button>
-            <button class="number" onclick="appendToDisplay('0')">0</button>
-            
-            <button class="decimal" onclick="appendToDisplay('.')">.</button>
-            <button class="clear" onclick="backspace()">⌫</button>
+        <div class="form-control">
+            <label for="email" id="label-email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" />
         </div>
-    </div>
-
-    <script>
-        const display = document.getElementById('display');
-        
-        function appendToDisplay(value) {
-            if (display.value === '0' && value !== '.') {
-                display.value = value;
-            } else {
-                display.value += value;
-            }
-        }
-        
-        function clearDisplay() {
-            display.value = '0';
-        }
-        
-        function backspace() {
-            if (display.value.length === 1) {
-                display.value = '0';
-            } else {
-                display.value = display.value.slice(0, -1);
-            }
-        }
-        
-        function calculateResult() {
-            try {
-                display.value = eval(display.value);
-            } catch (error) {
-                display.value = 'Error';
-                setTimeout(clearDisplay, 1000);
-            }
-        }
-    </script>
+        <div class="form-control">
+            <label for="age" id="label-age">Age</label>
+            <input type="text" id="age" placeholder="Enter your age" />
+        </div>
+         <div class="form-control">
+            <label for="year" id="label-year">Year</label>
+            <input type="text" id="year" placeholder="Enter your year" />
+        </div>
+        <div class="form-control">
+            <label for="dept and section" id="label-dept and section">Dept and section</label>
+            <input type="text" id="dept and section" placeholder="Enter your dept and section" />
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">Who is the worst teacher,in your opinion?</label>
+            <select name="role" id="role">
+                <option value="TBH">TBH</option>
+                <option value="BG">BG</option>
+                <option value="BS">BS</option>
+                <option value="KD">KD</option>
+                <option value="SS">SS</option>
+                <option value="AG">AG</option>
+                <option value="GSP">GSP</option>
+                <option value="DOUBLE CHOSMA">DOUBLE CHOSMA</option>
+                <option value="HOD">HOD</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">Who is the best teacher,in your opinion?</label>
+            <select name="role" id="role">
+                <option value="SG">SG</option>
+                <option value="DRC">DRC</option>
+                <option value="TTR">TTR</option>
+                <option value="KM">KM</option>
+                <option value="IB">IB</option>
+                <option value="AG">AG</option>
+                <option value="GSP">GSP</option>
+                <option value="HOD">HOD</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label>Who recommend you to apply in this college?</label>
+            <label for="recommed-1">
+                <input type="radio" id="recommed-1" name="recommed">friend
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-2" name="recommed">teacher
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-3" name="recommed">others
+            </label>
+        </div>
+        <div class="form-control">
+            <label>If I give you a time machine ,then what you will want?</label>
+            <label for="recommed-1">
+                <input type="radio" id="recommed-1" name="recommed">Dept change
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-2" name="recommed">College change
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-3" name="recommed">State change
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-3" name="recommed">Country change
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-3" name="recommed">Past change
+            </label>
+        </div>
+        <div class="form-control">
+            <label> What is your favorite programming language?</label>
+                <small>(Check all that apply)</small>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox" name="inp">C
+            </label>
+            <label for="inp-2">
+                <input type="checkbox" name="inp">C++
+            </label>
+            <label for="inp-3">
+                <input type="checkbox" name="inp">C#
+            </label>
+            <label for="inp-4">
+                <input type="checkbox" name="inp">Java
+            </label>
+            <label for="inp-5">
+                <input type="checkbox" name="inp">Python
+            </label>
+            <label for="inp-6">
+                <input type="checkbox" name="inp">JavaScript
+            </label>
+            <label for="inp-7">
+                <input type="checkbox" name="inp">React
+            </label>
+            <label for="inp-8">
+                <input type="checkbox" name="inp">Angular
+            </label>
+            <label for="inp-9">
+                <input type="checkbox" name="inp">Django
+            </label>
+            <label for="inp-10">
+                <input type="checkbox" name="inp">Spring
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="comment">Any comments or suggestions</label>
+            <textarea name="comment" id="comment" placeholder="Enter your comment here"></textarea>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" value="submit">Submit</button>
+    </form>
 </body>
 </html>
