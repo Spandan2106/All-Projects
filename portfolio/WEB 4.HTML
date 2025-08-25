@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WEB 4</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fffbe7 60%, #ffe0e0 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .edu-card {
+      background: #fffdf5cc;
+      max-width: 750px;
+      margin: 40px auto 32px auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(255, 193, 7, 0.13);
+      padding: 36px 32px 28px 32px;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      border: 2px solid #82d7ff;
+    }
+    .edu-card:hover {
+      box-shadow: 0 8px 32px rgba(234, 255, 7, 0.22);
+      transform: translateY(-4px) scale(1.01);
+    }
+    h2 {
+      text-align: center;
+      color: #ff1900;
+      margin-bottom: 28px;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 0 #fffbe7;
+      font-size: 2rem;
+      font-weight: bold;
+      text-decoration: underline wavy #d4f803;
+    }
+    .edu-list {
+      font-size: 1.13rem;
+      color: #130e0e;
+      padding-left: 22px;
+      margin-bottom: 22px;
+      list-style: decimal inside;
+    }
+    .edu-list li {
+      margin-bottom: 18px;
+      background: linear-gradient(90deg, #fffde4 80%, #ffc109 100%);
+      border-radius: 8px;
+      padding: 12px 16px;
+      box-shadow: 0 2px 8px rgba(2, 213, 240, 0.991);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      cursor: pointer;
+      border-left: 5px solid #ff5500;
+      position: relative;
+    }
+    .edu-list li:hover {
+      background: #fff9c4;
+      color: #04c6fb;
+      transform: scale(1.02);
+      border-left: 5px solid #ff9800;
+    }
+    .edu-list b {
+      color: #ff2200;
+    }
+    .edu-list a {
+      color: #1976d2;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+    .edu-list a:hover {
+      color: #d84315;
+      background: #fffde7;
+      border-radius: 4px;
+      padding: 2px 4px;
+    }
+    .subject-list {
+      margin: 10px 0 10px 24px;
+      padding-left: 0;
+      font-size: 1.08rem;
+      color: #333;
+      list-style: decimal;
+    }
+    .subject-list li {
+      display: inline-block;
+      background: #ffe082;
+      color: #6d4c41;
+      margin: 4px 8px 4px 0;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(255, 193, 7, 0.08);
+      transition: background 0.2s, color 0.2s;
+    }
+    .subject-list li:hover {
+      background: #ffd54f;
+      color: #e65100;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      text-decoration: none;
+      color: #fff;
+      background: #1a07f1;
+      padding: 10px 32px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(255, 193, 7, 0.10);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .back-link:hover {
+      background: #cfc91e;
+      color: #e65100;
+      transform: scale(1.04);
+    }
+    @media (max-width: 800px) {
+      .edu-card {
+        max-width: 97vw;
+        padding: 18px 4vw 18px 4vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="edu-card">
+    <h2><b><u>EDUCATION</u></b></h2>
+    <ol class="edu-list">
+      <li>
+        My first school was <b>Singur Mahamaya High School, Singur, Hooghly, West Bengal</b>.<br>
+        Here, I had completed my <b>Madhyamik (Secondary Exam)</b> and <b>Higher Secondary Exam</b>.<br>
+        In this school I had completed my 12 years of school education life, from <b>class 1 to class 12</b>.
+      </li>
+      <li>
+        In class <b>Two(II)</b> I had secured <b>1st position</b> in my school.<br>
+        In class <b>Three(III)</b> I had secured <b>1st position</b> in my school.<br>
+        In class <b>Four(IV)</b> I had secured <b>2nd position</b> in my school.<br>
+        In class <b>Five(V)</b> I had secured <b>12th position</b> among students of our school.<br>
+        In class <b>Six(VI)</b> I had secured <b>11th position</b> among students of our school.<br>
+        In class <b>Seven(VII)</b> I had secured <b>12th position</b> among students of our school.<br>
+        In class <b>Eight(VIII)</b> I had secured <b>12th position</b> among students of our school.
+      </li>
+      <li>
+        In class <b>Ten(X)</b>, I had secured <b>1st position</b> in <b>Madhyamik Exam 2022</b> in our school, not only in our school but also in Singur Block. I had got <b>676 out of 700</b>.<br>
+        Here is my <a href="WEB 4(1).HTML">marksheet</a>
+      </li>
+      <li>
+        Then I took admission in Singur Mahamaya High School, in <b>Science Stream.</b><br>
+        Following subjects were:
+        <ol class="subject-list">
+          <li>BENGALI</li>
+          <li>ENGLISH</li>
+          <li>MATHEMATICS</li>
+          <li>PHYSICS</li>
+          <li>CHEMISTRY</li>
+          <li>BIOLOGY</li>
+        </ol>
+      </li>
+      <li>
+        In class <b>Eleven(XI), final examination 2023</b> I had secured <b>4th position</b>, in the <b>Science Stream.</b> I had got <b>451 marks out of 500</b>.<br>
+        Here is my <a href="WEB4(2).HTML">marksheet</a>.
+      </li>
+      <li>
+        In class <b>Twelve(XII)</b>, <b>HIGHER SECONDARY EXAM 2024</b>, I have secured <b>6th position</b> among the students of Science Stream.<br>
+        I had got <b>456 marks out of 500.</b><br>
+        Here is my <a href="WEB 4(3).HTML">Marksheet</a>
+      </li>
+      <li>
+        I had also appeared in the <b>All India JEE MAIN Exam 2024</b>, in both the January and April attempt.<br>
+        From the both two attempts my best Percentile is <b>90.25</b>.<br>
+        My <b>AIR(General cota)</b> rank is - <b>146395</b>.<br>
+        Here is my <a href="WEB 4(4).HTML">Rankcard</a>
+      </li>
+      <li>
+        I had also appeared <b>WBJEE 2024</b>. In this exam, my <b>AIR(General)</b> rank is - <b>6997</b><br>
+        Here is my <a href="WEB 4(5).HTML">Rankcard</a>.
+      </li>
+      <li>
+        Then I take admission in <b>TECHNO MAIN SALT LAKE</b> through <b>WBJEE centralized</b> counseling<br>
+        in <b>MOP UP ROUND</b> in 12th August, 2024. My Degree is <b>B.Tech in IT (INFORMATION TECHNOLOGY)</b>.
+      </li>
+      <li>
+        My 1st sem cgpa is <b>9.232</b> and 2nd sem cgpa is <b>9.46</b>,and 1st year ygpa is <b>9.35</b>.<br>
+      </li>
+    </ol>
+    <a class="back-link" href="WEB2.HTML">BACK</a>
+  </div>
+</body>

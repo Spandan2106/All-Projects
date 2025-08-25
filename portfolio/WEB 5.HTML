@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WEB 5</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f3f1ee91 60%, #7ec8e3 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .hobby-main-card {
+      max-width: 800px;
+      margin: 40px auto 32px auto;
+      padding: 0 0 28px 0;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(8, 8, 8, 0.995);
+      background: rgba(255,255,255,0.10);
+      animation: fadeIn 1.2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    h2 {
+      text-align: center;
+      color: #fe440b;
+      margin-bottom: 28px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 0 #fffbe7;
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-decoration: underline wavy #e7cd90;
+      animation: popIn 1s;
+    }
+    @keyframes popIn {
+      0% {transform: scale(0.7);}
+      80% {transform: scale(1.1);}
+      100% {transform: scale(1);}
+    }
+    .hobby-cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .hobby-card {
+      flex: 1 1 320px;
+      min-width: 270px;
+      max-width: 350px;
+      background: linear-gradient(135deg, #00bbff 60%, #6e70d6 100%);
+      color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(23, 14, 1, 0.18);
+      padding: 24px 20px 18px 20px;
+      margin: 0;
+      position: relative;
+      border: 2.5px solid #fff3e0;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideIn 0.7s;
+      font-size: 1.13rem;
+      cursor: pointer;
+    }
+    .hobby-card:hover {
+      transform: scale(1.04) translateY(-6px);
+      box-shadow: 0 10px 32px rgba(255, 152, 0, 0.28);
+      background: linear-gradient(135deg, #ff6f00 60%, #ff9800 100%);
+      border-color: #ffd54f;
+      color: #fffde7;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    .hobby-card a {
+      color: #fffde7;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.2s, background 0.2s;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .hobby-card a:hover {
+      color: #4400ff;
+      background: #fffde7;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      margin: 32px 0 10px 0;
+      animation: fadeIn 1.5s;
+    }
+    .gallery img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(23, 78, 197, 0.18);
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      border: 4px solid #ff9800;
+      background: #fff;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.09) rotate(-2deg);
+      box-shadow: 0 12px 36px rgba(255,152,0,0.22);
+      border-color: #ff6f00;
+    }
+    .back-link {
+      display: inline-block;
+      margin: 32px auto 0 auto;
+      text-decoration: none;
+      color: #fff;
+      background: #ff6f00;
+      padding: 12px 38px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.15rem;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(255, 152, 0, 0.13);
+      text-align: center;
+      letter-spacing: 1px;
+      animation: fadeIn 2s;
+      border: 2px solid #fff3e0;
+      display: block;
+      width: fit-content;
+    }
+    .back-link:hover {
+      background: #ffd54f;
+      color: #ff6f00;
+      transform: scale(1.06);
+      border-color: #ff9800;
+    }
+    @media (max-width: 900px) {
+      .hobby-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .gallery img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+    @media (max-width: 600px) {
+      .hobby-main-card {
+        max-width: 99vw;
+        padding: 0 0 18px 0;
+      }
+      .hobby-card {
+        min-width: 0;
+        max-width: 98vw;
+        padding: 16px 8vw 12px 8vw;
+        font-size: 1rem;
+      }
+      .gallery img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+    </div><div class="hobby-main-card">
+    <h2><b><u>HOBBIES</u></b></h2>
+    <div class="hobby-cards-container">
+      <div class="hobby-card">
+        From my deepest corner of my heart I am a nature lover and an artist.
+      </div>
+      <div class="hobby-card">
+        I love to show, to draw the essence and the flavour of nature through the colours and the brushes.
+        Some of my <a href="#">art works</a>.
+      </div>
+      <div class="hobby-card">
+        I am also fond of reading books. I love to read all types of books, but I mostly like books based on Science fiction, Adventure, Detective stories, and Horror fiction. I like all types of literature like novels, short stories, comics, etc.
+      </div>
+      <div class="hobby-card">
+        I have also one hobby: I love to watch movies, mainly on science fiction, horror, adventure. Most of the time I watch films of Hollywood. My most favourite films and webseries are Feluda, Gupi & Bagha, STAR WARS, MARVEL comics, DC comics, GAME OF THRONES, LORD OF THE RINGS, EXPENDABLES, RAMBO, KGF, SALAAR, AVATAR, CONJURING, ANCIENT ALIENS etc.
+      </div>
+      <div class="hobby-card">
+        Even I love to read the books on ancient civilization, war and history.
+      </div>
+    </div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Nature Art">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Book Reading">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Movie Watching">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Ancient History">
+    </div>
+    <a class="back-link" href="WEB2.HTML">BACK</a>
+  </div>
