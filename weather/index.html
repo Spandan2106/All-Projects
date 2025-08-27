@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      color: #2d3a4b;
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      text-shadow: 1px 2px 8px #fff7;
+      letter-spacing: 2px;
+    }
+    .weather-container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(44, 62, 80, 0.13);
+      padding: 32px 28px 24px 28px;
+      min-width: 320px;
+      max-width: 90vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    #city {
+      padding: 12px 16px;
+      border: 1px solid #b2bec3;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      outline: none;
+      width: 220px;
+      transition: border 0.2s;
+    }
+    #city:focus {
+      border: 1.5px solid #74ebd5;
+    }
+    #getWeather {
+      padding: 12px 32px;
+      background: linear-gradient(90deg, #74ebd5 60%, #ACB6E5 100%);
+      color: #2d3a4b;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #74ebd533;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      margin-left: 8px;
+    }
+    #getWeather:hover {
+      background: linear-gradient(90deg, #ACB6E5 60%, #74ebd5 100%);
+      color: #0077b6;
+      transform: scale(1.04);
+    }
+    #result {
+      margin-top: 18px;
+      min-height: 60px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.15rem;
+      color: #222;
+      font-weight: 500;
+    }
+    .weather-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .weather-info img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 8px;
+    }
+    .temp {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #0077b6;
+    }
+    .desc {
+      font-size: 1.1rem;
+      color: #555;
+      text-transform: capitalize;
+    }
+    .city-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #2d3a4b;
+    }
+    @media (max-width: 500px) {
+      .weather-container {
+        min-width: 90vw;
+        padding: 18px 4vw;
+      }
+      #city {
+        width: 90vw;
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌤 Weather App</h1>
+  <div class="weather-container">
+    <input type="text" id="city" placeholder="Enter city name">
+    <button id="getWeather">Get Weather</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    // Replace with your own OpenWeatherMap API key
+    const API_KEY = "aa56c2c3f5513c6726400df387b662d3";
+
+    document.getElementById('getWeather').addEventListener('click', getWeather);
+    document.getElementById('city').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') getWeather();
+    });
+
+    function getWeather() {
+console.log("Get Weather function triggered");
+const city = document.getElementById('city').value.trim();
+      const result = document.getElementById('result');
+      if (!city) {
+        result.innerHTML = "<span style='color:#d90429;'>Please enter a city name.</span>";
+        return;
+      }
+console.log("Get Weather button clicked");
+console.log("Fetching weather data for:", city);
+result.innerHTML = "Loading...";
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`)
+        .then(res => {
+          if (!res.ok) throw new Error("City not found");
+          return res.json();
+        })
+        .then(data => {
+          const icon = data.weather[0].icon;
+          const desc = data.weather[0].description;
+          const temp = Math.round(data.main.temp);
+          const cityName = data.name + ", " + data.sys.country;
+          result.innerHTML = `
+            <div class="weather-info">
+              <span class="city-name">${cityName}</span>
+              <img src="https://openweathermap.org/img/wn/${icon}@4x.png" alt="${desc}">
+              <span class="temp">${temp}°C</span>
+              <span class="desc">${desc}</span>
+            </div>
+          `;
+        })
+        .catch(err => {
+          result.innerHTML = "<span style='color:#d90429;'>City not found. Please try again.</span>";
+        });
+    }
+  </script>
+</body>
+</html>
