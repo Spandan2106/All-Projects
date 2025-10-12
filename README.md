@@ -6,4 +6,5 @@
 5. The link of my portfolio website(begginer level) https://spandanportfolio20251.netlify.app/
 6. The link of my google clone website is https://googleclone-by-spandan.netlify.app/
 
-My batches [![An image of @spandan2106's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/spandan2106)](https://holopin.io/@spandan2106)
+My batches [![An image of @spandan2106's Holopin badges, which is a link to view their full Holopin profile]
+https://www.holopin.io/userbadge/cmgnhguvi00bpjj049dps1jv9 
